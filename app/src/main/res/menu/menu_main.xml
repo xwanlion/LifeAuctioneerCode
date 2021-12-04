@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.yanzhenjie.andserver.lifeauctioneer.com.yanzhenjie.xwanlion.lifeauctioneer.MainActivity">
+    <group android:id="@+id/group_home_menu">
+        <item
+            android:id="@+id/frg_menu_abouts"
+            android:orderInCategory="100"
+            android:title="@string/menu_about"/>
+    </group>
+
+</menu>

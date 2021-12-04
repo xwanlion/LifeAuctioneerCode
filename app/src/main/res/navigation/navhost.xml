@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navhost"
+    app:startDestination="@id/auctionsListFragment"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/auctionsListFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.AuctionsListFragment"
+        android:label="@string/txt_activity_list_fragment_title">
+        <action
+            android:id="@+id/action_auctionsListFragment_to_hostManSettingFragment"
+            app:destination="@id/hostManSettingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bidderListFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.BidderListFragment"
+        android:label="BidderListFragment" >
+        <action
+            android:id="@+id/action_bidderListFragment_to_bidderAddingFragment"
+            app:destination="@id/bidderAddingFragment" />
+        <action
+            android:id="@+id/action_bidderListFragment_to_auctionLotListFragment"
+            app:destination="@id/auctionLotListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bidderAddingFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.BidderAddingFragment"
+        android:label="BidderAddingFragment" >
+        <action
+            android:id="@+id/action_bidderAddingFragment_to_bidderListFragment"
+            app:destination="@id/bidderListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/auctionLotListFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.LotListFragment"
+        android:label="AuctionLotListFragment" >
+        <action
+            android:id="@+id/action_auctionLotListFragment_to_bidderListFragment"
+            app:destination="@id/bidderListFragment" />
+        <action
+            android:id="@+id/action_auctionLotListFragment_to_auctionLotAddingFragment"
+            app:destination="@id/auctionLotAddingFragment" />
+        <action
+            android:id="@+id/action_auctionLotListFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/auctionLotAddingFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.LotAddingFragment"
+        android:label="AuctionLotAddingFragment" >
+        <action
+            android:id="@+id/action_auctionLotAddingFragment_to_auctionLotListFragment"
+            app:destination="@id/auctionLotListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moneySettingFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.MoneySettingFragment"
+        android:label="SettingMoneyFragment" >
+        <action
+            android:id="@+id/action_moneySettingFragment_to_hostManSettingFragment"
+            app:destination="@id/hostManSettingFragment" />
+        <action
+            android:id="@+id/action_moneySettingFragment_to_bidderListFragment"
+            app:destination="@id/bidderListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostManSettingFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.AuctioneerSettingFragment"
+        android:label="HostManSettingFragment" >
+        <action
+            android:id="@+id/action_hostManSettingFragment_to_moneySettingFragment"
+            app:destination="@id/moneySettingFragment" />
+        <action
+            android:id="@+id/action_hostManSettingFragment_to_auctionsListFragment"
+            app:destination="@id/auctionsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.github.xwanlion.lifeauctioneer.view.ReviewFragment"
+        android:label="ReviewFragment" >
+        <action
+            android:id="@+id/action_reviewFragment_to_activityListFragment"
+            app:destination="@id/auctionsListFragment" />
+    </fragment>
+</navigation>

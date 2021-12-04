@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyo_auction_lot_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcyv_auction_lot_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:scrollbarSize="3dp"
+        android:scrollbars="vertical"/>
+
+    <ImageButton
+        android:id="@+id/btn_lot_list_next_step"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:contentDescription="@string/tips_activity_next_step"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rcyv_auction_lot_list"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_navigate_next_black_24dp"
+        tools:ignore="UnusedAttribute"
+        android:layout_marginLeft="@dimen/dp_margin_default_value"
+        android:layout_marginRight="@dimen/dp_margin_default_value"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.yanzhenjie.andserver'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
+
+    defaultConfig {
+        applicationId "com.github.xwanlion.lifeauctioneer"
+        minSdkVersion 14
+        targetSdkVersion 30
+        versionCode 2
+        versionName "1.0.1"
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false // 开启混淆
+            zipAlignEnabled true // 开启优化
+            shrinkResources // 删除多余的资源文件
+            // 前一个文件是 android studio 定义的混淆规则, 后一个文件才是自己定义的
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false // 开启混淆
+            zipAlignEnabled true // 开启优化
+            shrinkResources // 删除多余的资源文件
+            // 前一个文件是 android studio 定义的混淆规则, 后一个文件才是自己定义的
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility = 1.8
+        sourceCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.3.0"
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation "androidx.test.espresso:espresso-intents:3.3.0"
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+
+    // use AndServer
+    annotationProcessor 'com.yanzhenjie.andserver:processor:2.1.7'
+    implementation 'com.yanzhenjie.andserver:api:2.1.7'
+    implementation 'com.yanzhenjie:loading:1.0.0'
+    implementation "org.java-websocket:Java-WebSocket:1.4.0"
+    implementation "com.alibaba:fastjson:1.1.71.android"
+
+    // use room
+    def room_version = "2.2.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // For Kotlin use kapt instead of annotationProcessor
+    testImplementation "androidx.room:room-testing:$room_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    implementation 'cn.hutool:hutool-all:5.6.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+
+    // fix rotate image
+    implementation 'com.drewnoakes:metadata-extractor:2.11.0'
+
+    // check leak
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+//    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3' // Optional, if you use support library fragments:
+
+}
