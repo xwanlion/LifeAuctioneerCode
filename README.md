@@ -1,5 +1,5 @@
 # LifeAuctioneer
-the code of project lifeAuctioneer, which can Using WIFI as a LAN to holds value auction activity anywhere
+the code of project lifeAuctioneer, which can Using WIFI as a LAN to holds value auction activity anywhere, project has back-end and client-end, this is android code, back-end, but contain client resource.
 # home page
 https://xwanlion.github.io/lifeauctioneer
 # Features:
